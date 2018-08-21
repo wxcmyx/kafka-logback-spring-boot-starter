@@ -39,6 +39,7 @@
 		<maven.maven-archetype-plugin.version>2.3</maven.maven-archetype-plugin.version>
 		<maven.maven-resources-plugin.version>2.6</maven.maven-resources-plugin.version>
 
+		<springboot.version>2.0.4.RELEASE</springboot.version>
 		<logstash.version>5.1</logstash.version>
 		<logback.version>1.2.3</logback.version>
 		<kafka.api.version>0.10.2.0</kafka.api.version>
@@ -48,24 +49,29 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-autoconfigure</artifactId>
+			<version>${springboot.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
+			<version>${springboot.version}</version>
 			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<version>${springboot.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<version>${springboot.version}</version>
 			<!--<scope>provided</scope>-->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<version>${springboot.version}</version>
 			<scope>test</scope>
 		</dependency>
 
