@@ -12,19 +12,33 @@
 	<description>logback and kafka</description>
 
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.4.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
 	</parent>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>xiaochao Wang</name>
+			<email>44312782@qq.com</email>
+			<organization>http://sidao.org</organization>
+		</developer>
+	</developers>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<logstash.version>5.1</logstash.version>
+		<logback.version>1.2.3</logback.version>
 		<kafka.api.version>0.10.2.0</kafka.api.version>
-		<version.java>1.8</version.java>
+		<maven.archetype-packaging.version>3.0.1</maven.archetype-packaging.version>
 	</properties>
 
 	<dependencies>
@@ -88,19 +102,49 @@
 	</dependencies>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3</version>
-				<configuration>
-					<encoding>${project.build.sourceEncoding}</encoding>
-					<source>${version.java}</source>
-					<target>${version.java}</target>
-					<showWarnings>true</showWarnings>
-				</configuration>
-			</plugin>
-		</plugins>
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.archetype</groupId>
+				<artifactId>archetype-packaging</artifactId>
+				<version>${maven.archetype-packaging.version}</version>
+			</extension>
+		</extensions>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.5.3</version>
+					<configuration>
+						<tagNameFormat>${project.version}</tagNameFormat>
+						<autoVersionSubmodules>true</autoVersionSubmodules>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.3</version>
+					<configuration>
+						<encoding>${project.build.sourceEncoding}</encoding>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+						<showWarnings>true</showWarnings>
+					</configuration>
+				</plugin>
+				<plugin>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>${maven.maven-resources-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-scm-plugin</artifactId>
+					<version>1.8.1</version>
+					<configuration>
+						<connectionType>connection</connectionType>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
 
 
