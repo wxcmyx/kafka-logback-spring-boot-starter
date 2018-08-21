@@ -17,7 +17,6 @@ import org.springframework.context.annotation.Import;
 
 /**
  * @author Create by lixz
- * @Description:
  */
 @Configuration
 @Import(KafkaAppenderProperties.class)

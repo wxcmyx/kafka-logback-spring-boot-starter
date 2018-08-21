@@ -1,11 +1,9 @@
 package org.sidao.kafkaLogback;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
 
 /**
  * @author Create by lixz
- * @Description:
  */
 @ConfigurationProperties(prefix = "kafka")
 public class KafkaAppenderProperties {

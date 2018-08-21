@@ -12,6 +12,7 @@ public interface KeyingStrategy<E> {
     /**
      * creates a byte array key for the given {@link ILoggingEvent}
      * @param e the logging event
+     * @return
      */
     byte[] createKey(E e);
 

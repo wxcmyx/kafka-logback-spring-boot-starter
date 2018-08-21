@@ -6,7 +6,6 @@ import java.lang.annotation.*;
 
 /**
  * @author Create by lixz
- * @Description:
  */
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
